@@ -128,15 +128,15 @@ img {
       .card-image {
         position: relative;
         top: 2em;
-        border-radius: 25px;
+        border-radius: 10px;
         box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.2),
           0 6px 20px 0 rgba(0, 0, 0, 0.19);
         z-index: 1;
       }
 
       .card-details {
-        border-bottom-left-radius: 25px;
-        border-bottom-right-radius: 25px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
         padding: 25px;
         background-color: $card-color;
         display: grid;
@@ -190,7 +190,8 @@ img {
         background-color: #9e54ff;
         justify-content: space-around;
         height: 100vh;
-        width: 80vw;
+        width: 100vw;
+        left: 0;
         pointer-events: none;
         clip-path: circle(100px at 100% -30%);
         transition: all 1s ease-out;
