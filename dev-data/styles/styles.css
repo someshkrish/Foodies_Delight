@@ -34,36 +34,33 @@ img {
 
 #header {
   background-color: #867ae9;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 10%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  justify-items: center;
+  height: 5em;
 }
 
 #header .wrapper {
   width: 80%;
-  height: 90%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  height: 5em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[3];
+      grid-template-columns: repeat(3, auto);
+  justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 #header .wrapper .header-logo {
-  margin-top: 0.5em;
   width: 10em;
-  height: 10em;
+  height: 3em;
 }
 
 #header .wrapper .header-search-box {
@@ -92,12 +89,13 @@ img {
   width: 17em;
 }
 
-#header .wrapper .header-search-box a {
+#header .wrapper .header-search-box .search-icon {
   -ms-grid-column-align: center;
       justify-self: center;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  cursor: pointer;
   width: 15px;
 }
 
@@ -112,6 +110,10 @@ img {
           align-items: center;
 }
 
+#header .wrapper .header-icons a {
+  cursor: pointer;
+}
+
 #header .wrapper .header-icons a:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
@@ -119,5 +121,107 @@ img {
   transition: -webkit-transform 0.1s ease-in-out;
   transition: transform 0.1s ease-in-out;
   transition: transform 0.1s ease-in-out, -webkit-transform 0.1s ease-in-out;
+}
+
+#header .wrapper .header-icons .nav-link:active {
+  -webkit-transform: scale(0.96);
+          transform: scale(0.96);
+  -webkit-transition: -webkit-transform 0.1s ease-in-out;
+  transition: -webkit-transform 0.1s ease-in-out;
+  transition: transform 0.1s ease-in-out;
+  transition: transform 0.1s ease-in-out, -webkit-transform 0.1s ease-in-out;
+}
+
+#header .wrapper .hamburger {
+  display: none;
+}
+
+@media screen and (max-width: 999px) {
+  #header .wrapper .header-icons {
+    position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: #9e54ff;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    height: 100vh;
+    width: 80vw;
+    pointer-events: none;
+    -webkit-clip-path: circle(100px at 100% -30%);
+            clip-path: circle(100px at 100% -30%);
+    -webkit-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+  }
+  #header .wrapper .header-icons .nav-link {
+    color: transparent;
+    -webkit-transition: all 0.5s ease 0.2s;
+    transition: all 0.5s ease 0.2s;
+    opacity: 0;
+  }
+  #header .wrapper .header-icons .fade {
+    opacity: 1;
+  }
+  #header .wrapper .header-icons.open {
+    -webkit-clip-path: circle(1500px at 100% -30%);
+            clip-path: circle(1500px at 100% -30%);
+    pointer-events: all;
+  }
+  #header .wrapper .header-icons.open .nav-link {
+    color: white;
+    font-size: 2em;
+  }
+  #header .wrapper .hamburger {
+    width: 1.5em;
+    height: 1em;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: (auto)[3];
+        grid-template-rows: repeat(3, auto);
+    grid-row-gap: 5px;
+    cursor: pointer;
+    z-index: 2;
+  }
+  #header .wrapper .hamburger .line {
+    background-color: white;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #header {
+    height: 100vh;
+  }
+  #header .wrapper {
+    position: relative;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    height: 100vh;
+  }
+  #header .wrapper .header-logo {
+    width: 20em;
+    height: 6em;
+  }
+  #header .wrapper .hamburger {
+    position: absolute;
+    top: 5%;
+    right: 7%;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  #header .wrapper .header-logo {
+    width: 15em;
+    height: 5em;
+  }
+  #header .wrapper .header-search-box {
+    width: 15em;
+  }
+  #header .wrapper .header-search-box #search-box {
+    width: 10em;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
