@@ -18,15 +18,15 @@ if (hamburger) {
   });
 }
 
-if (searchIcon) {
-  searchIcon.addEventListener('click', async () => {
-    const query = document.getElementById('search-box').value;
+// if (searchIcon) {
+//   searchIcon.addEventListener('click', async () => {
+//     const query = document.getElementById('search-box').value;
 
-    if (!query) {
-      alert('Please Enter The Dish You Want To Search...');
-    } else {
-      document.getElementById('search-box').value = '';
-      await recipeCalling(query);
-    }
-  });
-}
+//     if (!query) {
+//       alert('Please Enter The Dish You Want To Search...');
+//     } else {
+//       document.getElementById('search-box').value = '';
+//       await recipeCalling(query);
+//     }
+//   });
+// }

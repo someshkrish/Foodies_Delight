@@ -20,7 +20,7 @@ exports.getRecipes = async (req, res, next) => {
         from: '0',
         size: '20',
         tags: 'under_30_minutes',
-        q: req.params.query
+        q: req.query.search
       },
       headers: {
         'x-rapidapi-key': '45123137dfmsh8dc2e63c8e22d07p1699cajsn62e17d80cb3f',
@@ -36,14 +36,12 @@ exports.getRecipes = async (req, res, next) => {
       src: el.thumbnail_url
     }));
 
-    res.locals.recipes = data.results;
-
     res.status(200).render('recipes', {
       title: "Foode's Delight",
       recipes: data.results
     });
   } catch (err) {
     console.log(err);
-    location.assign('/');
+    window.location.assign('/');
   }
 };

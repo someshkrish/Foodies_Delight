@@ -13,13 +13,17 @@
       <div class="wrapper">
         <img class="header-logo" src="./Images/Logo_white.png" alt="logo" />
         <div class="header-search-box">
-          <input
-            type="text"
-            name="search"
-            id="search-box"
-            placeholder="search"
-          />
-          <img src="./Images/search.png" class="search-icon" />
+          <form action="/recipe" method="get">
+            <input
+              type="text"
+              name="search"
+              id="search-box"
+              placeholder="search"
+            />
+            <button type="submit" class="search-button">
+              <img src="./Images/search.png" class="search-icon" />
+            </button>
+          </form>
         </div>
         <div class="header-icons">
           <a href="#" class="nav-link"> Favourite </a>
