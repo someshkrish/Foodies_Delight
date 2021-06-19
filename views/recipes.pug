@@ -1,0 +1,12 @@
+extends base
+
+block content
+  #recipes
+    .cards
+      each recipe in recipes
+        .card
+          img.card-image(src=`${recipe.src}` alt='recipe-image')
+          .card-details
+            p= `${recipe.name}`
+            img.card-footer-img(src='/Images/heart.png' alt='heart')
+            img.card-footer-img(src='/Images/cart.png' alt='cart')
