@@ -168,12 +168,6 @@ img {
 #recipes .cards .card .card-image {
   position: relative;
   top: 2em;
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
   border-radius: 10px;
   -webkit-box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -293,6 +287,15 @@ img {
 }
 
 @media screen and (max-width: 800px) {
+  #header .wrapper .header-search-box {
+    width: 15em;
+  }
+  #header .wrapper .header-search-box #search-box {
+    width: 12em;
+  }
+}
+
+@media screen and (max-width: 600px) {
   #header {
     height: 100vh;
   }
@@ -304,16 +307,13 @@ img {
   }
   #header .wrapper .header-logo {
     width: 20em;
-    height: 6em;
+    height: auto;
   }
   #header .wrapper .hamburger {
     position: absolute;
     top: 5%;
     right: 7%;
   }
-}
-
-@media screen and (max-width: 600px) {
   #recipes .cards {
     width: 60%;
     -ms-grid-columns: auto;
@@ -324,13 +324,7 @@ img {
 @media screen and (max-width: 523px) {
   #header .wrapper .header-logo {
     width: 15em;
-    height: 5em;
-  }
-  #header .wrapper .header-search-box {
-    width: 15em;
-  }
-  #header .wrapper .header-search-box #search-box {
-    width: 10em;
+    height: auto;
   }
   #recipes .cards {
     width: 80%;

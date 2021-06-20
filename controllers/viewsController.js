@@ -45,3 +45,16 @@ exports.getRecipes = async (req, res, next) => {
     window.location.assign('/');
   }
 };
+
+exports.getFavourites = async (req, res, next) => {
+  try {
+    const localData = JSON.parse(localStorage.getItem('fav'));
+
+    res.status(200).render('favourite', {
+      title: "Foodie's Delight | Favourite",
+      recipes: localData.favs
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};

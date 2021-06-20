@@ -133,11 +133,6 @@ img {
       .card-image {
         position: relative;
         top: 2em;
-        max-width: 100%;
-        max-height: 100%;
-        width: auto;
-        height: auto;
-        object-fit: cover;
         border-radius: 10px;
         box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.2),
           0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -242,7 +237,6 @@ img {
       }
     }
   }
-
   #recipes {
     .cards {
       grid-template-columns: auto auto;
@@ -252,6 +246,20 @@ img {
 
 @media screen and (max-width: 800px) {
   #header {
+    .wrapper {
+      .header-search-box {
+        width: 15em;
+
+        #search-box {
+          width: 12em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #header {
     height: 100vh;
     .wrapper {
       position: relative;
@@ -260,7 +268,7 @@ img {
 
       .header-logo {
         width: 20em;
-        height: 6em;
+        height: auto;
       }
 
       .hamburger {
@@ -270,9 +278,6 @@ img {
       }
     }
   }
-}
-
-@media screen and (max-width: 600px) {
   #recipes {
     .cards {
       width: 60%;
@@ -286,14 +291,7 @@ img {
     .wrapper {
       .header-logo {
         width: 15em;
-        height: 5em;
-      }
-      .header-search-box {
-        width: 15em;
-
-        #search-box {
-          width: 10em;
-        }
+        height: auto;
       }
     }
   }

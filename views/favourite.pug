@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='shortcut icon' href='/Images/favicon.png' type='image/x-icon')
+    link(rel='stylesheet' href='/styles/styles.css')
+    title #{title}
+
+  body
+    #header
+      .wrapper
+        a(href="/") 
+          img.header-logo(src='/Images/Logo_white.png' alt='logo')
+        .header-icons
+          a.nav-link(href='/favourites')  Favourite 
+        .hamburger
+          .line
+          .line
+          .line
+    #recipes
+      .cards
+        each recipe in recipes
+          .card
+            img.card-image(src=`${recipe.src}` alt='recipe-image')
+            .card-details
+              p= `${recipe.name}`
+              img.card-footer-img(src='/Images/heart.png' alt='heart' id="heart")
+              img.card-footer-img(src='/Images/info.png' alt='info' id="info")

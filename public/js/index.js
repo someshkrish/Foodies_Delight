@@ -1,13 +1,11 @@
 /*eslint-disable*/
 import '@babel/polyfill';
-import { recipeCalling } from './recipes';
-
-const axios = require('axios');
 
 const hamburger = document.querySelector('.hamburger');
 const headerIcons = document.querySelector('.header-icons');
 const icons = document.querySelectorAll('.nav-link');
-const searchIcon = document.querySelector('.search-icon');
+const favourite = document.querySelectorAll('#heart');
+const info = document.querySelectorAll('#info');
 
 if (hamburger) {
   hamburger.addEventListener('click', () => {
@@ -18,15 +16,40 @@ if (hamburger) {
   });
 }
 
-// if (searchIcon) {
-//   searchIcon.addEventListener('click', async () => {
-//     const query = document.getElementById('search-box').value;
+if (favourite) {
+  favourite.forEach((el) => {
+    el.addEventListener('click', () => {
+      let localData = JSON.parse(localStorage.getItem('fav'));
+      let image_url, food_name;
 
-//     if (!query) {
-//       alert('Please Enter The Dish You Want To Search...');
-//     } else {
-//       document.getElementById('search-box').value = '';
-//       await recipeCalling(query);
-//     }
-//   });
-// }
+      image_url = el.parentElement.parentElement
+        .getElementsByTagName('img')[0]
+        .getAttribute('src');
+      food_name = el.parentElement.getElementsByTagName('p')[0].innerHTML;
+
+      if (localData !== null && localData != undefined) {
+        localData.favs.push({
+          image_url,
+          food_name
+        });
+        let jsonString = JSON.stringify(localData);
+        localStorage.setItem('fav', jsonString);
+      } else {
+        let jsonString = JSON.stringify({
+          image_url,
+          food_name
+        });
+        localStorage.setItem('fav', `{"favs": [${jsonString}]}`);
+      }
+      // console.log(localData);
+    });
+  });
+}
+
+if (info) {
+  info.forEach((el) =>
+    el.addEventListener('click', () => {
+      alert('info is clicked');
+    })
+  );
+}
