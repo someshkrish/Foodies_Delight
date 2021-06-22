@@ -276,6 +276,9 @@ img {
     grid-row-gap: 5px;
     cursor: pointer;
     z-index: 100;
+    position: absolute;
+    top: 5%;
+    right: 7%;
   }
   #header .wrapper .hamburger .line {
     background-color: white;
