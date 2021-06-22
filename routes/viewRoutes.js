@@ -6,6 +6,6 @@ const router = express.Router();
 router.get('/', viewsController.getOverview);
 router.get('/recipe', viewsController.getRecipes);
 router.get('/favourites', viewsController.getFavourites);
-router.get('/detail/:id', viewsController.getDetails);
+router.get('/detail/:id/:query', viewsController.getDetails);
 
 module.exports = router;

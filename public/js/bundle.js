@@ -6961,12 +6961,20 @@ if (favourite) {
             food_name: food_name,
             recipe_id: recipe_id
           });
-          localDataString = JSON.stringify(localData);
-          localStorage.setItem('fav', localDataString);
-          alert('Item Added To your Favourite List...');
+          alert('Item added to your favourite list...');
         } else {
-          alert('Item Is Already In Your Favourite Section...');
+          var newArr = [];
+          localData.favs.forEach(function (el) {
+            if (JSON.stringify(el) !== objString) {
+              newArr.push(el);
+            }
+          });
+          localData.favs = newArr;
+          alert('Item is removed from the favourite section...');
         }
+
+        localDataString = JSON.stringify(localData);
+        localStorage.setItem('fav', localDataString);
       } else {
         var jsonString = JSON.stringify({
           image_url: image_url,
@@ -6974,7 +6982,7 @@ if (favourite) {
           recipe_id: recipe_id
         });
         localStorage.setItem('fav', "{\"favs\": [".concat(jsonString, "]}"));
-        alert('Item Added To your Favourite List...');
+        alert('Item added to your favourite list...');
       }
     });
   });
@@ -6984,7 +6992,7 @@ if (favSection) {
   var favItems = JSON.parse(localStorage.getItem('fav')).favs;
   var markup = '';
   favItems.forEach(function (item) {
-    markup += "<div class=\"card\">\n    <img src=\"".concat(item.image_url, "\" alt=\"recipe-image\" class=\"card-image\" />\n    <div class=\"card-details\">\n      <p>").concat(item.food_name, "</p>\n      <img src=\"./Images/heart.png\" alt=\"heart\" class=\"card-footer-img\" />\n      <a href=").concat(item.recipe_id, ">\n        <img src=\"./Images/info.png\" alt=\"info\" class=\"card-footer-img\" />\n      </a>\n    </div>\n  </div>");
+    markup += "<div class=\"card\">\n    <img src=\"".concat(item.image_url, "\" alt=\"recipe-image\" class=\"card-image\" />\n    <div class=\"card-details\">\n      <p>").concat(item.food_name, "</p>\n      <img src=\"./Images/heart.png\" alt=\"heart\" class=\"card-footer-img\" id=\"heart\"/>\n      <a href=").concat(item.recipe_id, ">\n        <img src=\"./Images/info.png\" alt=\"info\" class=\"card-footer-img\" id=\"info\"/>\n      </a>\n    </div>\n  </div>");
   });
   favSection.insertAdjacentHTML('afterbegin', markup);
 }
@@ -7016,7 +7024,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37235" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40479" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

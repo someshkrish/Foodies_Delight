@@ -28,7 +28,8 @@ exports.getRecipes = async (req, res, next) => {
       name: el.name,
       slug: el.slug,
       src: el.thumbnail_url,
-      id: el.id
+      id: el.id,
+      query: req.query.search
     }));
 
     res.status(200).render('recipes', {
@@ -73,7 +74,8 @@ exports.getDetails = async (req, res, next) => {
     res.status(200).render('details', {
       title: "Foodie's Delight | Details Page",
       steps,
-      nutrition
+      nutrition,
+      query: req.params.query
     });
   } catch (err) {
     res.status(200).render('overview', {

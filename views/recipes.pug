@@ -9,5 +9,5 @@ block content
           .card-details
             p= `${recipe.name}`
             img.card-footer-img(src='/Images/heart.png' alt='heart' id="heart")
-            a(href=`/detail/${recipe.id}`) 
+            a(href=`/detail/${recipe.id}/${recipe.query}`) 
               img.card-footer-img(src='/Images/info.png' alt='info' id="info")

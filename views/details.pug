@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='shortcut icon' href='/Images/favicon.png' type='image/x-icon')
+    link(rel='stylesheet' href='/styles/recipe.css')
+    title= title
+
+  body
+    .header
+      a(href=`/recipe?search=${query}`)
+        img.header-back(src='/Images/arrow.png' alt='back-arrow')
+    .details-page-wrapper
+      .instructions
+        h1 Instructions
+        each step in steps
+          p= step
+          br
+      .nutrients
+        h1 Nutrition Info
+        .nutrients-info
+          .nutrient
+            p Calories
+            p= nutrition.calories
+          .nutrient
+            p Carbohydrates
+            p= nutrition.carbohydrates
+          .nutrient
+            p Fat
+            p= nutrition.fat
+          .nutrient
+            p protein
+            p= nutrition.protein
+          .nutrient
+            p sugar
+            p= nutrition.sugar
+          .nutrient
+            p fiber
+            p= nutrition.fiber

@@ -41,12 +41,19 @@ if (favourite) {
             food_name,
             recipe_id
           });
-          localDataString = JSON.stringify(localData);
-          localStorage.setItem('fav', localDataString);
-          alert('Item Added To your Favourite List...');
+          alert('Item added to your favourite list...');
         } else {
-          alert('Item Is Already In Your Favourite Section...');
+          let newArr = [];
+          localData.favs.forEach((el) => {
+            if (JSON.stringify(el) !== objString) {
+              newArr.push(el);
+            }
+          });
+          localData.favs = newArr;
+          alert('Item is removed from the favourite section...');
         }
+        localDataString = JSON.stringify(localData);
+        localStorage.setItem('fav', localDataString);
       } else {
         let jsonString = JSON.stringify({
           image_url,
@@ -54,7 +61,7 @@ if (favourite) {
           recipe_id
         });
         localStorage.setItem('fav', `{"favs": [${jsonString}]}`);
-        alert('Item Added To your Favourite List...');
+        alert('Item added to your favourite list...');
       }
     });
   });
@@ -69,9 +76,9 @@ if (favSection) {
     <img src="${item.image_url}" alt="recipe-image" class="card-image" />
     <div class="card-details">
       <p>${item.food_name}</p>
-      <img src="./Images/heart.png" alt="heart" class="card-footer-img" />
+      <img src="./Images/heart.png" alt="heart" class="card-footer-img" id="heart"/>
       <a href=${item.recipe_id}>
-        <img src="./Images/info.png" alt="info" class="card-footer-img" />
+        <img src="./Images/info.png" alt="info" class="card-footer-img" id="info"/>
       </a>
     </div>
   </div>`;

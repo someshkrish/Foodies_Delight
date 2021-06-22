@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  font-family: 'Poppins', arial;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  // text-transform: lowercase;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  height: 100vh;
+  .header {
+    padding: 2% 20% 0%;
+    display: grid;
+    grid-template-columns: 100%;
+
+    .header-back {
+      float: right;
+      width: 25px;
+      align-items: center;
+      padding-top: 0.8em;
+    }
+  }
+
+  .details-page-wrapper {
+    padding: 0% 20% 5%;
+    .instructions {
+      display: grid;
+      justify-content: center;
+      justify-items: start;
+      align-items: center;
+      h1 {
+        justify-self: center;
+        text-transform: capitalize;
+        margin: 1em;
+      }
+    }
+
+    .nutrients {
+      display: grid;
+
+      h1 {
+        text-transform: capitalize;
+        justify-self: center;
+        align-self: center;
+        margin: 1em;
+      }
+
+      .nutrients-info {
+        display: grid;
+        .nutrient {
+          display: grid;
+          grid-template-columns: 50% 50%;
+          p {
+            justify-self: center;
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+  }
+}
