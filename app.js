@@ -3,7 +3,6 @@ const path = require('path');
 
 //other-modules
 const express = require('express');
-const cors = require('cors');
 const compression = require('compression');
 
 //imported functions
@@ -21,10 +20,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(compression());
-
-//CORS
-app.use(cors());
-app.options('*', cors());
 
 //Mounting the exported routers on a route
 app.use('/', viewRouter);
