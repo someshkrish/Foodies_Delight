@@ -219,8 +219,8 @@ img {
 }
 
 .overview {
-  margin-left: 10%;
-  width: 80%;
+  margin-left: 30%;
+  width: 40%;
 }
 
 @media screen and (max-width: 999px) {
@@ -285,6 +285,10 @@ img {
     -ms-grid-columns: auto auto;
         grid-template-columns: auto auto;
   }
+  .overview {
+    margin-left: 25%;
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -293,6 +297,10 @@ img {
   }
   #header .wrapper .header-search-box #search-box {
     width: 12em;
+  }
+  .overview {
+    margin-left: 20%;
+    width: 60%;
   }
 }
 
@@ -319,6 +327,9 @@ img {
     width: 60%;
     -ms-grid-columns: auto;
         grid-template-columns: auto;
+  }
+  .overview {
+    display: none;
   }
 }
 
