@@ -59,6 +59,11 @@ body .details-page-wrapper .instructions h1 {
   margin: 1em;
 }
 
+body .details-page-wrapper .instructions p {
+  padding-left: 1em;
+  border-left: 5px solid #867ae9;
+}
+
 body .details-page-wrapper .nutrients {
   display: -ms-grid;
   display: grid;

@@ -218,11 +218,9 @@ img {
           transform: scale(0.98);
 }
 
-#recipes .cards .card:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
+.overview {
+  margin-left: 10%;
+  width: 80%;
 }
 
 @media screen and (max-width: 999px) {
