@@ -1,3 +1,3 @@
 # Foodie's Delight
 
-A food ordering application powered by Edamam API.
+Recipe searching application with the help of tasty api from rapid api.
